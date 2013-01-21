@@ -4,15 +4,7 @@ require 'sinatra'
 set :server, :thin
 set :port, 5000
 
-get '/html' do
-  # TODO:
-end
-
-get '/jpeg' do
-  # TODO:
-end
-
-get '/mjpeg' do
+get '/' do
   boundary = "hello"
 
   status 200
@@ -26,8 +18,4 @@ get '/mjpeg' do
       sleep 0.04
     end
   end
-end
-
-get '/' do
-  [200, {'Content-Type' => 'text/html'}, ['Hello, World!']]
 end
