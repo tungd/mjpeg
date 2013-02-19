@@ -13,6 +13,9 @@ while (true) {
     print "--{$boundary}\n";
     print "Content-type: image/jpeg\n\n";
 
+    ob_clean();
+    flush();
+
     $img = $current % 16 + 1;
 
     readfile("img/{$img}.jpg");
